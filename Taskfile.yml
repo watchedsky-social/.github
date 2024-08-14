@@ -1,0 +1,17 @@
+version: "3"
+
+includes:
+  backend:
+    dir: ../backend
+    taskfile: ../backend/Taskfile.yml
+  frontend:
+    dir: ../frontend
+    taskfile: ../frontend/Taskfile.yml
+
+
+tasks:
+  dev:
+    deps:
+      - backend:dev-server
+      - backend:dev-alert-monitor
+      - frontend:dev-server
